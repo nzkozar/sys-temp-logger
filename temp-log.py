@@ -44,7 +44,7 @@ while True:
 
 	timeText = str(datetime.datetime.now())
 
-	logText = timeText+" "+coretempsText+" "+gpuTemps
+	logText = timeText+" "+coretempsText+" "+gpuTemps+"\n"
 	
 	with open(filepath,'a') as log:
 		log.write(logText)
