@@ -2,6 +2,9 @@ import psutil
 import os
 import time, datetime
 
+filepath = "/var/log/templog.log"
+log_interval = 5
+
 while True:
 
 	sensors = psutil.sensors_temperatures()
@@ -43,7 +46,7 @@ while True:
 
 	logText = timeText+" "+coretempsText+" "+gpuTemps
 	
-	with open('templog','a') as log:
+	with open(filepath,'a') as log:
 		log.write(logText)
 
-	time.sleep(5)
+	time.sleep(log_interval)
